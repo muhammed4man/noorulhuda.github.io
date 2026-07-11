@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Local Islamic Dars Organization</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #0f5132; /* Deep Islamic Green */
+            --accent-color: #d4af37;  /* Gold */
+            --light-bg: #f8f9fa;
+            --dark-text: #212529;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Cairo', sans-serif;
+        }
+
+        body {
+            background-color: var(--light-bg);
+            color: var(--dark-text);
+            line-height: 1.6;
+        }
+
+        /* Header & Navigation */
+        header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 1rem 2rem;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            font-weight: 700;
+            font-size: 1.5rem;
+            color: var(--accent-color);
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 1.5rem;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--accent-color);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(15, 81, 50, 0.85), rgba(15, 81, 50, 0.85)), url('https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&q=80&w=1000') center/cover;
+            color: white;
+            text-align: center;
+            padding: 5rem 1rem;
+        }
+
+        .hero h1 { font-size: 2.5rem; margin-bottom: 1rem; }
+        .hero p { font-size: 1.2rem; max-width: 600px; margin: 0 auto 2rem; }
+
+        /* Container styling */
+        .container {
+            max-width: 1200px;
+            margin: 3rem auto;
+            padding: 0 1rem;
+        }
+
+        section {
+            margin-bottom: 4rem;
+        }
+
+        h2 {
+            color: var(--primary-color);
+            border-bottom: 3px solid var(--accent-color);
+            display: inline-block;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.3rem;
+        }
+
+        /* Notifications Section */
+        .notification-card {
+            background: white;
+            border-left: 5px solid var(--accent-color);
+            padding: 1.5rem;
+            border-radius: 4px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            margin-bottom: 1rem;
+        }
+        .notification-date {
+            font-size: 0.85rem;
+            color: #6c757d;
+            font-weight: bold;
+        }
+
+        /* Attendance Section */
+        .attendance-box {
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+        }
+        .status-badge {
+            background-color: #e2f0d9;
+            color: #385723;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-weight: bold;
+            display: inline-block;
+            margin-bottom: 1rem;
+        }
+        .btn {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 0.7rem 2rem;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            font-weight: 600;
+            transition: background 0.3s;
+        }
+        .btn:hover {
+            background-color: #0b3d26;
+            color: var(--accent-color);
+        }
+
+        /* Photo Gallery Grid */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+        .gallery-item img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 6px;
+            transition: transform 0.3s;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        .gallery-item img:hover {
+            transform: scale(1.03);
+        }
+
+        /* Resources Section */
+        .resource-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+        .resource-card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 6px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--primary-color);
+            color: white;
+            text-align: center;
+            padding: 2rem 1rem;
+            margin-top: 4rem;
+        }
+        footer p { color: #ced4da; font-size: 0.9rem; }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-container { flex-direction: column; }
+            nav { margin-top: 1rem; }
+            nav a { margin: 0 0.7rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="nav-container">
+            <div class="logo">🕌 Dar-ul-Ilm</div>
+            <nav>
+                <a href="#notifications">Updates</a>
+                <a href="#attendance">Attendance</a>
+                <a href="#gallery">Gallery</a>
+                <a href="#resources">Resources</a>
+            </nav>
+        </div>
+    </header>
+
+    <div class="hero">
+        <h1>NOORUL HUDA</h1>
+        <p>Seeking knowledge is a duty upon every Muslim. Join our weekly circles of knowledge, purification, and community growth.</p>
+        <a href="#attendance" class="btn">Mark Today's Attendance</a>
+    </div>
+
+    <div class="container">
+
+        <section id="notifications">
+            <h2>Program Notifications & Schedule</h2>
+            <div class="notification-card">
+                <span class="notification-date">Upcoming •12/07/26 Sunday after ASR</span>
+                <h3>NABIDHINAM FIRST MEETING</h3>
+                <p>We will be covering the chapters of Purification (Taharah). Open to all brothers and sisters. Light refreshments will be served.</p>
+            </div>
+            <div class="notification-card">
+                <span class="notification-date">Announcement • Posted Oct 24</span>
+                <h3>Special Guest Lecture</h3>
+                <p>Next Friday, we welcome Sheikh Ahmed for a special session on Islamic Ethics in the Modern Era.</p>
+            </div>
+        </section>
+
+        <section id="attendance">
+            <h2>Attendance Status</h2>
+            <div class="attendance-box">
+                <div class="status-badge">● Active Session Open</div>
+                <h3>Are you attending today's Dars?</h3>
+                <p style="margin-bottom: 1.5rem; color: #555;">Please log your attendance below so we can keep track of participation and manage seating arrangements.</p>
+                <a href="https://forms.google.com/" target="_blank" class="btn">Click Here to Check-In</a>
+            </div>
+        </section>
+
+        <section id="gallery">
+            <h2>Photo Gallery</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item"><img src="https://images.unsplash.com/photo-1564507592333-c60657eea523?auto=format&fit=crop&q=80&w=500" alt="Dars Hall"></div>
+                <div class="gallery-item"><img src="https://images.unsplash.com/photo-1584551246679-0daf3d275d0f?auto=format&fit=crop&q=80&w=500" alt="Books"></div>
+                <div class="gallery-item"><img src="https://images.unsplash.com/photo-1609599006353-e629aaabfeae?auto=format&fit=crop&q=80&w=500" alt="Quran"></div>
+            </div>
+        </section>
+
+        <section id="resources">
+            <h2>Dars Resources & Kitabs</h2>
+            <div class="resource-list">
+                <div class="resource-card">
+                    <div>
+                        <h4>Fiqh Syllabus (PDF)</h4>
+                        <small style="color:#777;">Size: 2.4 MB</small>
+                    </div>
+                    <a href="#" class="btn" style="padding: 0.4rem 1rem; font-size: 0.9rem;">Download</a>
+                </div>
+                <div class="resource-card">
+                    <div>
+                        <h4>Weekly Adhkar Sheet</h4>
+                        <small style="color:#777;">Size: 850 KB</small>
+                    </div>
+                    <a href="#" class="btn" style="padding: 0.4rem 1rem; font-size: 0.9rem;">Download</a>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <footer>
+        <p>© 2026 Dar-ul-Ilm Organization. All Rights Reserved.</p>
+        <p style="margin-top: 0.5rem; font-size: 0.8rem;">Located at Main Community Masjid | Contact: info@yourdars.com</p>
+    </footer>
+
+</body>
+</html>
